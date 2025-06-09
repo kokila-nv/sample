@@ -21,9 +21,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Create .env file from GitHub variable (no trailing newline issues)
-      run: |
-        printf "%s\n" "${{ vars.ENV_FILE_CONTENT }}" > .env
+    - name: Create .env file from single GitHub variable
+      run: echo "${{ vars.ENV_FILE_CONTENT }}" > .env
 
     - name: Run .env validation script
       run: bash scripts/validate_env.sh
