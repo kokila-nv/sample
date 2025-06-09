@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting with .env
 on:
   push:
     branches:
-      - main  # Trigger deploy only on main branch
+      - sample  # Trigger deploy only on main branch
 
 jobs:
   deploy:
