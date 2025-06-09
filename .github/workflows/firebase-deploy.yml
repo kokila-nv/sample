@@ -21,11 +21,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Create .env file
-      run: |
-        echo "API_URL=https://my-backend.com/api" >> .env
-        echo "APP_VERSION=2.0.1" >> .env
-
     - name: Run .env validation script
       run: bash scripts/validate_env.sh
 
