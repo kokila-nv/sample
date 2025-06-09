@@ -21,10 +21,10 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Create .env file
+    - name: Create .env file from GitHub variables
       run: |
-        echo "API_URL=https://my-backend.com/api" >> .env
-        echo "APP_VERSION=2.0.1" >> .env
+       echo "API_URL=${{ vars.API_URL }}" >> .env
+       echo "APP_VERSION=${{ vars.APP_VERSION }}" >> .env
 
     - name: Run .env validation script
       run: bash scripts/validate_env.sh
